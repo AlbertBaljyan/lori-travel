@@ -105,12 +105,12 @@ body {
 
 main {
   flex: 1 1 auto;
-  padding-top: 80px;
+  padding-top: 30px;
 }
 
 @media screen and (max-width: 479px) {
   main {
-    padding-top: 30px;
+    padding-top: 10px;
   }
 }
 

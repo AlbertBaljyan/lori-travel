@@ -1,0 +1,73 @@
+.toures {
+  .toures__bg {
+  }
+  .toures__wrapper {
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    .toures__thinking {
+      width: 20%;
+      height: 400px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    .toures__category {
+      .category__columns {
+        display: flex;
+
+        .category__item {
+          margin: 5px;
+          height: 131px;
+          width: 100%;
+          background-size: cover;
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-blend-mode: hue;
+          background-color: rgba(0, 0, 0, 0.7);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: all 0.3s ease 0s;
+
+          &.attraction {
+            background-image: url("./img/attraction.jpg");
+          }
+          &.cultural {
+            background-image: url("./img/cultural.jpg");
+          }
+          &.all {
+            background-image: url("./img/cultural.jpg");
+          }
+          &.excursion {
+            background-image: url("./img/excursion.jpg");
+          }
+          &.art {
+            background-image: url("./img/nationalGallery.jpg");
+            background-position: 25% 27%;
+          }
+
+          span {
+            display: inline-block;
+            font-size: 25px;
+            font-weight: 800;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 991px) {
+  .category__item {
+    &:hover {
+      filter: invert(0.2) !important;
+    }
+  }
+}

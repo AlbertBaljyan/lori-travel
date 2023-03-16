@@ -1,5 +1,6 @@
 .main__wrapper {
   padding-bottom: 100px;
+  padding-top: 50px;
   .main__content {
     display: flex;
     align-items: center;
@@ -107,6 +108,7 @@
 
 @media screen and (max-width: 479px) {
   .main__wrapper {
+    padding-top: 20px;
     .main__content {
       .content__title {
         font-size: 25px;
