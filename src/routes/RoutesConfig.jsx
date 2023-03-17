@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import Login from "../components/Login/Login";
 
 import Preloader from "../components/Preloader/Preloader";
 const HomePage = React.lazy(() => import("../pages/HomePage/HomePage"));
@@ -20,9 +21,9 @@ const RoutesConfig = React.memo(() => {
         }
       />
       <Route path="info">
-        <Route path="foods" element={"Foods"}/>
-        <Route path="transport" element={"Transport"}/>
-        <Route path="gazebos" element={"Gazebos"}/>
+        <Route path="foods" element={"Foods"} />
+        <Route path="transport" element={"Transport"} />
+        <Route path="gazebos" element={"Gazebos"} />
       </Route>
       <Route
         path="toures"
@@ -45,6 +46,14 @@ const RoutesConfig = React.memo(() => {
         element={
           <React.Suspense fallback={<Preloader />}>
             <AboutPage />
+          </React.Suspense>
+        }
+      />
+      <Route
+        path="login"
+        element={
+          <React.Suspense fallback={<Preloader />}>
+            <Login />
           </React.Suspense>
         }
       />

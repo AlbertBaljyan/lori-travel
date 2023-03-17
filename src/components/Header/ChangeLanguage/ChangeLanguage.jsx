@@ -18,7 +18,6 @@ const ChangeLanguage = () => {
             value: "en",
             label: (
               <span className="label__lang">
-                EN
                 <img src={flagUsa} alt="" />
               </span>
             ),
@@ -27,7 +26,6 @@ const ChangeLanguage = () => {
             value: "am",
             label: (
               <span className="label__lang">
-                AM
                 <img src={flagArmenia} alt="" />
               </span>
             ),
@@ -36,7 +34,6 @@ const ChangeLanguage = () => {
             value: "ru",
             label: (
               <span className="label__lang">
-                RU
                 <img src={flagRussia} alt="" />
               </span>
             ),

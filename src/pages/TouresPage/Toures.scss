@@ -54,9 +54,59 @@
             display: inline-block;
             font-size: 25px;
             font-weight: 800;
-            color: #fff;
+            color: var(--color-white);
             text-transform: uppercase;
             text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .toures {
+    .toures__title {
+      font-size: 22px;
+    }
+    .toures__wrapper {
+      .toures__thinking {
+        width: 40%;
+        height: 400px;
+      }
+      .toures__category {
+        .category__columns {
+          .category__item {
+            margin: 3px;
+            span {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 479px) {
+  .toures {
+    .toures__title {
+      font-size: 18px;
+      line-height: 140%;
+    }
+    .toures__wrapper {
+      .toures__thinking {
+        width: 40%;
+        height: 400px;
+      }
+      .toures__category {
+        .category__columns {
+          flex-direction: column;
+          .category__item {
+            height: 60px;
+            span {
+              font-size: 13px;
+            }
           }
         }
       }

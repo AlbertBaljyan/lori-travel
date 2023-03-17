@@ -8,6 +8,7 @@
     .content__text {
       flex: 0 0 40%;
       padding-right: 15px;
+      color: var(--color-white);
     }
     .content__title {
       font-size: 45px;
@@ -45,7 +46,7 @@
       top: 0;
       left: 0;
       z-index: -1;
-      box-shadow: 0 8px 22px 5px #fff;
+      box-shadow: 0 8px 22px 5px var(--color-white);
     }
   }
 }
@@ -74,7 +75,7 @@
 
 @media screen and (max-width: 767px) {
   .main__wrapper {
-    padding-bottom: 40px;
+    padding-bottom: 20px;
     .main__content {
       flex-direction: column;
       .content__text {

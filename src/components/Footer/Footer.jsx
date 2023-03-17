@@ -8,6 +8,7 @@ import {
 import NavbarList from "../Header/NavbarList/NavbarList";
 
 import "./Footer.scss";
+
 const Footer = () => {
   return (
     <footer className="footer">

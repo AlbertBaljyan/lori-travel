@@ -31,7 +31,7 @@
       bottom: 50%;
       transform: translate(50%, 50%);
       background-color: #24eb22;
-      color: #fff;
+      color: var(--color-white);
       -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 
       &:hover {
