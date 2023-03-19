@@ -1,5 +1,5 @@
 .auth__link {
-  background: var(--color-green);
+  background: var(--color-white);
   border-radius: 50%;
   width: 25px;
   height: 25px;
@@ -9,7 +9,7 @@
   transition: all 0.3s ease 0s;
   svg {
     path {
-      fill: var(--color-white);
+      fill: var(--color-green);
     }
   }
 }
@@ -17,11 +17,11 @@
 @media (min-width: 991px) {
   .auth__link {
     &:hover {
-      background: var(--color-white);
+      background: var(--color-green);
 
       svg {
         path {
-          fill: var(--color-green);
+          fill: var(--color-white);
         }
       }
     }

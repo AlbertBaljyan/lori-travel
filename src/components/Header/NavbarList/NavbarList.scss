@@ -30,6 +30,7 @@
           background: transparent;
           position: relative;
           padding-right: 15px;
+
           &::after {
             content: "";
             position: absolute;
@@ -50,7 +51,7 @@
           border-radius: 8px;
           z-index: 4;
           .dropdown__item {
-            border-bottom: 2px solid var(--color-white)fff78;
+            border-bottom: 2px solid var(--color-white) fff78;
             border-radius: 4px;
             transition: all 0.3s;
             background-color: #1b84bd;
@@ -94,6 +95,10 @@
         text-transform: uppercase;
         overflow: hidden;
         border-radius: 8px;
+
+        &.active {
+          background-color: var(--color-green);
+        }
 
         span {
           position: relative;
@@ -162,7 +167,7 @@
 
 @media screen and (max-width: 767px) {
   .header__navbar.show {
-    background-image: url("./img/bgMenu.jpg");
+    background-image: url("./img/bgMenu.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -340,6 +345,7 @@
       .navbar__link {
         font-size: 11px !important;
         padding-right: 3px !important;
+        padding-left: 3px !important;
       }
     }
   }

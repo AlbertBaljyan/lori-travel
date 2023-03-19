@@ -1,10 +1,11 @@
 import React, { lazy, useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import routesConfig from "../../routes/routesConfig";
 import AosEffect from "../../shared/AosEffect/AosEffect";
 import "./App.scss";
 const Header = lazy(() => import("../Header/Header"));
 const Footer = lazy(() => import("../Footer/Footer"));
 const MemoizedIntroVideo = lazy(() => import("../IntroVideo/IntroVideo"));
-const RoutesConfig = lazy(() => import("../../routes/RoutesConfig"));
 
 function App() {
   AosEffect();
@@ -17,7 +18,15 @@ function App() {
         <div className="wrapper">
           <Header />
           <main className="main">
-            <RoutesConfig />
+            <Routes>
+              {routesConfig.map((route) => (
+                <Route
+                  key={route.path}
+                  path={route.path}
+                  element={<React.Suspense>{route.element}</React.Suspense>}
+                />
+              ))}
+            </Routes>
           </main>
           <Footer />
         </div>

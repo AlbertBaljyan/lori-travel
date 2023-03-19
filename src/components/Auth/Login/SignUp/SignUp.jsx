@@ -8,7 +8,7 @@ const SignUp = ({ setShowLoginForm }) => {
     <div className="login-page__form register">
       <h2>Registration</h2>
       <form>
-        <div className="form__input-box ">
+        <div className="form__input-box">
           <span className="icon">
             <span className="icon">
               <FontAwesomeIcon icon={faUser} />
@@ -25,7 +25,7 @@ const SignUp = ({ setShowLoginForm }) => {
           <input type="email" required placeholder="Email" />
         </div>
         <div className="form__input-box">
-          <span className="icon">{ToggleIcon}</span>
+          <span className="icon icon-eye">{ToggleIcon}</span>
           <input type={PasswordInputType} required placeholder="Password" />
         </div>
         <div className="form__input-remember">
@@ -39,7 +39,16 @@ const SignUp = ({ setShowLoginForm }) => {
         <div className="form__register">
           <p>
             Already have an account?
-            <span className="login__btn" onClick={() => setShowLoginForm(true)}>
+            <span
+              className="login__btn"
+              onClick={() =>
+                setShowLoginForm({
+                  formLogin: true,
+                  formRegister: false,
+                  formForgotPass: false,
+                })
+              }
+            >
               Login
             </span>
           </p>

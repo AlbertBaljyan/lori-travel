@@ -90,17 +90,21 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background: rgba(0, 0, 0, 0.4);
-  background-image: url("./img/bg.jpg");
+  background-image: url("./img/bg.webp");
   background-blend-mode: multiply;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
 
-  &.remove-bg {
+  &.login-bg {
     background-image: url("./img/login-bg.webp");
     background-position: top center;
     background-blend-mode:normal;
+  }
+  &.toures-bg {
+    background-image: url("./img/toures-bg.webp");
+    background-position: top center;
   }
 }
 

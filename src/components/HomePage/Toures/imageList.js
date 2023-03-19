@@ -1,6 +1,6 @@
-import imgTumanyan from "./img/tumanyan.jpg";
-import imgSurbHovhannes from "./img/surb-hovhannes.jpg";
-import imgSanahin from "./img/sanahin.jpg";
+import imgTumanyan from "./img/tumanyan.webp";
+import imgSurbHovhannes from "./img/surb-hovhannes.webp";
+import imgSanahin from "./img/sanahin.webp";
 
 export const imageList = {
   imgTumanyan,

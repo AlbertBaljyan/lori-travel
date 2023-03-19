@@ -20,7 +20,7 @@ const ChangeLanguage = () => {
               <span className="label__lang">
                 <img src={flagUsa} alt="" />
               </span>
-            ),
+            ),  
           },
           {
             value: "am",

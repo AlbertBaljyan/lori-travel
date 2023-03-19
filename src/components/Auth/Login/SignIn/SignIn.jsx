@@ -23,7 +23,17 @@ const SignIn = ({ setShowLoginForm }) => {
             <input type="checkbox" />
             Remember me
           </label>
-          <span>Forgot Password</span>
+          <span
+            onClick={() =>
+              setShowLoginForm({
+                formLogin: false,
+                formRegister: false,
+                formForgotPass: true,
+              })
+            }
+          >
+            Forgot Password
+          </span>
         </div>
         <button type="submit" className="form__submit">
           Login
@@ -33,7 +43,13 @@ const SignIn = ({ setShowLoginForm }) => {
             Don't have an account?
             <span
               className="register__btn"
-              onClick={() => setShowLoginForm(false)}
+              onClick={() =>
+                setShowLoginForm({
+                  formLogin: false,
+                  formRegister: true,
+                  formForgotPass: false,
+                })
+              }
             >
               Register
             </span>

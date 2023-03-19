@@ -1,4 +1,4 @@
-import plantsFestival from "./img/plantsFestival.jpg";
+import plantsFestival from "./img/plantsFestival.webp";
 
 export const imageList = {
    plantsFestival

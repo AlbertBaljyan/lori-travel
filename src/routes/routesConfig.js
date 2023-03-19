@@ -1,14 +1,46 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-import Login from "../components/Login/Login";
-
-import Preloader from "../components/Preloader/Preloader";
+import React from 'react';
 const HomePage = React.lazy(() => import("../pages/HomePage/HomePage"));
 const TouresPage = React.lazy(() => import("../pages/TouresPage/TouresPage"));
 const BlogPage = React.lazy(() => import("../pages/BlogPage/BlogPage"));
 const AboutPage = React.lazy(() => import("../pages/AboutPage/AboutPage"));
+const NotFoundPage = React.lazy(() => import("../pages/NotFoundPage/NotFoundPage"));
+const Profile = React.lazy(() => import("../components/Profile/Profile"));
+const Auth = React.lazy(() => import("../components/Auth/Auth"));
 
-const RoutesConfig = React.memo(() => {
+const routesConfig = [
+  {
+    path: "/",
+    element: <HomePage />,
+  },
+  {
+    path: "/toures",
+    element: <TouresPage />,
+  },
+  {
+    path: "/blog",
+    element: <BlogPage />,
+  },
+  {
+    path: "/about",
+    element: <AboutPage />,
+  },
+  {
+    path: "/profile",
+    element: <Profile />,
+  },
+  {
+    path: "/login",
+    element: <Auth />,
+  },
+  {
+    path: "*",
+    element: <NotFoundPage />,
+  },
+];
+
+export default routesConfig;
+
+/* const RoutesConfig = React.memo(() => {
   return (
     <Routes>
       <Route
@@ -53,12 +85,20 @@ const RoutesConfig = React.memo(() => {
         path="login"
         element={
           <React.Suspense fallback={<Preloader />}>
-            <Login />
+            <Auth />
+          </React.Suspense>
+        }
+      />
+      <Route
+        path="profile"
+        element={
+          <React.Suspense fallback={<Preloader />}>
+            <Profile />
           </React.Suspense>
         }
       />
     </Routes>
   );
-});
+}); */
 
-export default RoutesConfig;
+
