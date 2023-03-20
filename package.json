@@ -14,6 +14,7 @@
     "aos": "^2.3.4",
     "axios": "^1.3.4",
     "gh-pages": "^5.0.0",
+    "json-server": "^0.17.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-intl": "^6.2.10",
@@ -32,7 +33,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build ",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "server": "json-server -w db.json --port 3001"
   },
   "eslintConfig": {
     "extends": [

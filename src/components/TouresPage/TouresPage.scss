@@ -1,0 +1,162 @@
+.toures {
+  .toures__wrapper {
+    display: flex;
+    justify-content: space-evenly;
+
+    .toures__title {
+      margin-top: 20px;
+      min-width: 50%;
+    }
+    .toures__category {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 600px;
+      height: 600px;
+      margin: 0 auto;
+
+      animation: rotation 25s linear infinite;
+
+      @keyframes rotation {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .category__item {
+        animation: none;
+        width: 170px;
+        height: 170px;
+        position: absolute;
+        left: 0;
+        transition: all 0.3s ease 0s;
+        transform: rotate(calc(473deg / 8 * var(--i)));
+        transform-origin: 310px;
+
+        &.center {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          animation: none;
+        }
+
+        a {
+          width: 100%;
+          height: 100%;
+          transform: rotate(calc(-473deg / 8 * var(--i)));
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          span {
+            display: inline-block;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--color-white);
+            text-transform: uppercase;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+
+            animation: non-rotating-text 25s linear infinite;
+
+            @keyframes non-rotating-text {
+              100% {
+                transform: rotate(-360deg);
+              }
+            }
+          }
+          .photo {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-blend-mode: hue;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            animation: non-rotating-img 25s linear infinite;
+
+            @keyframes non-rotating-img {
+              100% {
+                transform: rotate(-360deg);
+              }
+            }
+            &.attraction {
+              background-image: url("./img/attraction.jpg");
+            }
+            &.cultural {
+              background-image: url("./img/cultural.jpg");
+            }
+            &.all {
+              background-image: url("./img/cultural.jpg");
+            }
+            &.excursion {
+              background-image: url("./img/excursion.jpg");
+            }
+            &.art {
+              background-image: url("./img/nationalGallery.jpg");
+              background-position: 25% 27%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .toures {
+    .toures__title {
+      font-size: 18px;
+    }
+    .toures__wrapper {
+      .toures__category {
+        .category__item {
+          margin: 3px;
+          a {
+            span {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 479px) {
+  .toures {
+    .toures__title {
+      font-size: 18px;
+      line-height: 140%;
+    }
+    .toures__wrapper {
+      .toures__category {
+        .category__item {
+          height: 60px;
+          a span {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 991px) {
+  .category__item {
+    &:hover {
+      filter: invert(0.2) !important;
+    }
+  }
+}

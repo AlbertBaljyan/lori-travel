@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "tourCategory": {
+      "en": "Attraction",
+      "am": "Ատրակցիոն",
+      "ru": "Аттракцион"
+    },
+    "class": "attraction"
+  },
+  {
+    "id": 2,
+    "tourCategory": {
+      "en": "Cultural",
+      "am": "Մշակութային",
+      "ru": "Культурный"
+    },
+    "class": "cultural"
+  },
+  {
+    "id": 3,
+    "tourCategory": {
+      "en": "All",
+      "am": "Բոլորը",
+      "ru": "Все"
+    },
+    "class": "all"
+  },
+  {
+    "id": 4,
+    "tourCategory": {
+      "en": "Excursion",
+      "am": "Էքսկուրսիա",
+      "ru": "Экскурсия"
+    },
+    "class": "excursion"
+  },
+  {
+    "id": 5,
+    "tourCategory": {
+      "en": "Museums and art galleries",
+      "am": "Թանգարաններ և արվեստի պատկերասրահներ",
+      "ru": "Музеи и художественные галереи"
+    },
+    "class": "art"
+  },
+  {
+    "id": 6,
+    "tourCategory": {
+      "en": "Museums and art galleries",
+      "am": "Թանգարաններ և արվեստի պատկերասրահներ",
+      "ru": "Музеи и художественные галереи"
+    },
+    "class": "art"
+  }
+]

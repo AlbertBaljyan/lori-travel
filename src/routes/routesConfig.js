@@ -1,4 +1,5 @@
 import React from 'react';
+import TouresCategory from '../components/TouresPage/TouresCategory/TouresCategory';
 const HomePage = React.lazy(() => import("../pages/HomePage/HomePage"));
 const TouresPage = React.lazy(() => import("../pages/TouresPage/TouresPage"));
 const BlogPage = React.lazy(() => import("../pages/BlogPage/BlogPage"));
@@ -31,6 +32,10 @@ const routesConfig = [
   {
     path: "/login",
     element: <Auth />,
+  },
+  {
+    path: "/toures/category",
+    element: <TouresCategory />,
   },
   {
     path: "*",

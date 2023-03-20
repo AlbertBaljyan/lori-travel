@@ -1,73 +1,85 @@
-import React, { useEffect, useMemo, useState } from "react";
-import { NavLink } from "react-router-dom";
-import useDocumentTitle from "../../../hooks/useDocumentTitle";
-import AosEffect from "../../../shared/AosEffect/AosEffect";
-import { Typewriter } from "react-simple-typewriter";
-import thinkingGirl from "./img/thinking.png";
-import useLanguage from "../../../hooks/useLanguageContext";
-import touresList from "./toures.json";
-import common from "./common.json";
+import React, { useEffect, useState } from "react";
 import "./TouresCategory.scss";
 
+const Filter = ({ setActiveGenre, activeGenre, setFiltered, popular }) => {
+  useEffect(() => {
+    if (activeGenre === 0) {
+      setFiltered(popular);
+      return;
+    }
+    const filtered = popular.filter((movie) =>
+      movie.genre_ids.includes(activeGenre)
+    );
+    setFiltered(filtered);
+  }, [activeGenre]);
+  return (
+    <div className="filter__container">
+      <button onClick={() => setActiveGenre(0)}>All</button>
+      <button onClick={() => setActiveGenre(35)}>Comedy</button>
+      <button onClick={() => setActiveGenre(28)}>Action</button>
+    </div>
+  );
+};
+
+const Movie = ({ movie }) => {
+  return (
+    <div>
+      <h2>{movie.title}</h2>
+      <img
+        src={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path}
+        alt=""
+      />
+    </div>
+  );
+};
+
 const TouresCategory = () => {
-  AosEffect();
-  useDocumentTitle("Toures");
-  const { language } = useLanguage();
-  const [key, setKey] = useState(0);
-  const touresListMemo = useMemo(() => touresList, []);
+  const [popular, setPopular] = useState([]);
+  const [filtered, setFiltered] = useState([]);
+  const [activeGenre, setActiveGenre] = useState(0);
 
   useEffect(() => {
-    document.querySelector(".wrapper").classList.add("toures-bg");
-
-    return () => {
-      document.querySelector(".wrapper").classList.remove("toures-bg");
-    };
+    fetchPopular();
   }, []);
 
-  useEffect(() => {
-    setKey((key) => key + 1);
-  }, [language]);
+  const fetchPopular = async () => {
+    const data = await fetch(
+      "https://api.themoviedb.org/3/movie/popular?api_key=d5c35e51c81488b19da7c1f572507a3d&language=en-US&page=1"
+    );
+    const movies = await data.json();
+    setPopular(movies.results);
+    setFiltered(movies.results);
+  };
 
   return (
-    <section className="toures">
-      <div className="toures__bg"></div>
+    <div className="toures-category">
       <div className="container">
-        <h2 className="toures__title title">
-          <Typewriter
-            key={key}
-            words={[common[language].title]}
-            typeSpeed={100}
-          />
-        </h2>
-        <div className="toures__wrapper">
-          <div className="toures__thinking" data-aos="fade-right">
-            <img src={thinkingGirl} alt="Thinking girl" />
+        <div className="toures-category__wrapper">
+          <div className="toures-category__filter">
+            <Filter
+              popular={popular}
+              setFiltered={setFiltered}
+              activeGenre={activeGenre}
+              setActiveGenre={setActiveGenre}
+            />
           </div>
-          <div className="toures__category">
-            {touresListMemo.map((toures) => {
-              return (
-                <div
-                  key={toures.id}
-                  className="category__columns"
-                  data-aos="fade-left"
-                  data-aos-duration="1000"
-                  data-aos-delay="300"
-                >
-                  {toures.toures.map((toure) => (
-                    <NavLink
-                      key={toure.id}
-                      className="category__item attraction"
-                    >
-                      <span>{toure.tourCategory[language]}</span>
-                    </NavLink>
-                  ))}
-                </div>
-              );
+          <div className="toures-category__items">
+            {filtered.map((movie) => {
+              return <Movie movie={movie} key={movie.id} />;
             })}
+            <div className="category__item">
+              <div className="item__photo"></div>
+              <div className="item__title"></div>
+              <div className="item__duration"></div>
+              <div className="item__info">
+                <div className="info__price"></div>
+                <div className="info__date"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

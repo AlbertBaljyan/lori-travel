@@ -1,7 +1,9 @@
-import TouresCategory from "../../components/TouresPage/TouresCategory/TouresCategory";
+import TouresPageComp from "../../components/TouresPage/TouresPage";
 
 const TouresPage = () => {
-  return <TouresCategory />;
+  return (
+    <TouresPageComp />
+  )
 };
 
 export default TouresPage;
