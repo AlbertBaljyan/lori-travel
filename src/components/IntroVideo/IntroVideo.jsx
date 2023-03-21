@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import useLanguage from "../../hooks/useLanguageContext";
 import introVideo2 from "./video/videoplayback.webm";
 import traduction from "./language.json";
-import Preloader from "../Preloader/Preloader";
 import "./IntroVideo.scss";
 const MemoizedIntroVideo = React.memo(({ skipVideo, setSkipVideo }) => {
   const { language } = useLanguage();
@@ -21,6 +20,16 @@ const MemoizedIntroVideo = React.memo(({ skipVideo, setSkipVideo }) => {
         <video ref={videoRef} autoPlay loop muted>
           <source src={introVideo2} type="video/webm" />
         </video>
+        <button
+          onClick={handleSkipVideo}
+          className={`skip__btn ${activeClass}`}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          {traduction[language].skip}
+        </button>
       </>
     );
   }
@@ -40,25 +49,7 @@ const MemoizedIntroVideo = React.memo(({ skipVideo, setSkipVideo }) => {
 
   return (
     <>
-      {!skipVideo && (
-        <div className="video__wrapper">
-          {MyVideoComponent()}
-          {!window.onload ? (
-            <button
-              onClick={handleSkipVideo}
-              className={`skip__btn ${activeClass}`}
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              {traduction[language].skip}
-            </button>
-          ) : (
-            <Preloader />
-          )}
-        </div>
-      )}
+      {!skipVideo && <div className="video__wrapper">{MyVideoComponent()}</div>}
     </>
   );
 });

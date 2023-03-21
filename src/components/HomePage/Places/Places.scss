@@ -1,0 +1,56 @@
+.popular-places {
+  .swiper_container {
+    .swiper-slide {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      overflow: hidden;
+      color: var(--color-white);
+      background-color: var(--color-white);
+
+      .place__img {
+        span {
+          width: 100%;
+          height: 100%;
+
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px 20px 0 0;
+            overflow: hidden;
+            display: block;
+            object-fit: cover;
+            object-position: center center;
+          }
+        }
+      }
+      .place__info {
+        padding: 10px;
+        color: #131010;
+        font-family: var(--font-family-secondary);
+        .info__head {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 15px;
+
+          .info__title {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.1px;
+          }
+        }
+        .place__desc {
+          line-height: 150%;
+        }
+      }
+    }
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      font-size: 45px;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      top: 36%;
+    }
+  }
+}

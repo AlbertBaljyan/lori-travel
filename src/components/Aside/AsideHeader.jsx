@@ -1,15 +1,15 @@
 import React from "react";
 import Auth from "../Header/Auth/Auth";
 import ChangeLanguage from "../Header/ChangeLanguage/ChangeLanguage";
-import './TopHeader.scss'
+import './AsideHeader.scss'
 
-const TopHeader = () => {
+const AsideHeader = () => {
   return (
-    <div className="top__header">
+    <div className="aside__header">
       <Auth />
       <ChangeLanguage />
     </div>
   );
 };
 
-export default TopHeader;
+export default AsideHeader;

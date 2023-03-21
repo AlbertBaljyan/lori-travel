@@ -89,7 +89,7 @@
         color: var(--color-white);
         padding: 8px;
         letter-spacing: 1.1px;
-        font-size: 17px;
+        font-size: 16px;
         font-family: var(--font-family-secondary);
         font-weight: 600;
         text-transform: uppercase;
@@ -280,6 +280,7 @@
     height: 20px;
     z-index: 5;
     transition: all 0.3s ease 0s;
+    order: -1;
 
     &::before,
     &::after {

@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { NavLink } from "react-router-dom";
 import useDocumentTitle from "../../hooks/useDocumentTitle";
-import AosEffect from "../../shared/AosEffect/AosEffect";
 import useLanguage from "../../hooks/useLanguageContext";
 import touresList from "./toures.json";
 import { Typewriter } from "react-simple-typewriter";
@@ -9,7 +8,6 @@ import common from "./common.json";
 import "./TouresPage.scss";
 
 const TouresPageComp = () => {
-  AosEffect();
   useDocumentTitle("Toures");
   const { language } = useLanguage();
   const [key, setKey] = useState(0);
@@ -58,9 +56,6 @@ const TouresPageComp = () => {
                 <li
                   key={toure.id}
                   className={`category__item`}
-                  data-aos="fade-left"
-                  data-aos-duration="1000"
-                  data-aos-delay="300"
                   style={{ "--i": toure.id }}
                 >
                   <NavLink>

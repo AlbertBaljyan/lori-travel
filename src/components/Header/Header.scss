@@ -3,15 +3,16 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 108px;
+  height: 80px;
   z-index: 100;
   background: rgb(42 40 40 / 90%);
   backdrop-filter: blur(4px);
   .header__wrapper {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     position: relative;
-
+    height: 80px;
     .sub__header {
       display: flex;
       align-items: center;
@@ -21,7 +22,7 @@
       display: block;
       span {
         color: var(--color-green);
-        font-size: 45px;
+        font-size: 40px;
         font-family: var(--font-family-secondary);
       }
       /* img {
@@ -50,20 +51,8 @@
   .header {
     height: 60px;
     .header__wrapper {
-      flex-direction: row;
-      align-items: baseline;
-      justify-content: space-between;
-
-      .top__header {
-        order: 2;
-      }
-
-      .sub__header {
-        flex: 0 0 60%;
-      }
-
+      height: 60px;
       .header__logo {
-        order: 2;
         span {
           font-size: 34px;
         }

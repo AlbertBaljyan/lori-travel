@@ -1,21 +1,21 @@
 import React, { memo } from "react";
 import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Navigation, Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import useLanguage from "../../../hooks/useLanguageContext";
 import AosEffect from "../../../shared/AosEffect/AosEffect";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faStar } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { places } from "./placeList";
 import traduction from "./content.json";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import buttonLang from "../../../common/buttonLang/buttonLang.json";
 
 import "react-lazy-load-image-component/src/effects/blur.css";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "../../../styles/common.scss";
+import "./Places.scss";
 
 const Places = memo(() => {
   AosEffect();
@@ -73,13 +73,6 @@ const Places = memo(() => {
                     <h3 className="info__title slider__title">
                       {place.placeName[language]}
                     </h3>
-                    <span>
-                      <FontAwesomeIcon icon={faStar} />
-                      <FontAwesomeIcon icon={faStar} />
-                      <FontAwesomeIcon icon={faStar} />
-                      <FontAwesomeIcon icon={faStar} />
-                      <FontAwesomeIcon icon={faStar} />
-                    </span>
                   </div>
                   <p className="place__desc slider__desc">
                     {place.description[language]}
